@@ -1,0 +1,60 @@
+(a) ある right spine の長さ d において
+完全バランスしているときが最も要素を多く含む
+そのときの要素の数は size = 2^d - 1
+d = ln (size + 1)
+
+
+merge について帰納法
+
+size 0 において 0 <= ln 0
+
+h_1 h_2 が right depth <= ln (size + 1) を満たしているとき
+merge h_1 h_2 も満たすことを示す
+
+    | (h, E) -> h
+結果は h_1
+仮定より h_1 は right depth <= ln (size + 1) を満たしている
+
+    | (E, h) -> h
+結果は h_2
+仮定より h_2 は right depth <= ln (size + 1) を満たしている
+
+    | ( (T (_, x, a_1, b_1) as h_1), (T (_, y, a_2, b_2) as h_2) ) ->
+        if Elem.leq (x, y) then makeT (x, a_1, merge (b_1, h_2))
+
+size (merge b_1 h_2) = size h_2 + size b_1
+size (merge h_1 h_2) = size h_2 + size b_1 + size a_1 + 1
+
+size a >= size h_2 + size b_1
+
+  ln (size h_2 + size b_1) + 1 
+= ln ((size h_2 + size b_1) * 2)
+= ln (size h_2 + size b_1 + size h_2 + size b_1)
+<= ln (size h_2 + size b_1 + size a_1 + 1)
+なので成立
+
+size a < size h_2 + size b_1
+
+  ln (size a1) + 1
+= ln ((size a1 + size a1) * 2)
+= ln (size a1 + size a1)
+<= ln (size h_2 + size b_1 + size a_1 + 1)
+なので成立
+
+        else makeT (y, a_2, merge (h_1, b_2))
+
+変数置き換えなので省略
+
+(b) wHeap.ml
+
+(c) wHeap2.ml
+
+(d)
+
+ lazy のとき
+
+   subtree のマージを遅延させてマージを完了できる
+
+ concurrent のとき
+
+   subtree のマージを平行に行なうことはできない
