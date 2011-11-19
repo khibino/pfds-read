@@ -32,17 +32,17 @@ struct
       else true
     | x, E          -> false
 
-  let member =
-    let rec member cand = function
-    | x, T(a, y, b) ->
-      if Element.lt (x, y) then member cand (x, a)
+  let member (x, tree) =
+    let rec member cand x = function
+    | T(a, y, b) ->
+      if Element.lt (x, y) then member cand x a
       (* replace candidate *)
-      else member (Some y) (x, b)
-    | x, E          -> begin match cand with
+      else member (Some y) x b
+    | E          -> begin match cand with
         | Some cv when Element.eq (cv, x) -> true
         | _                               -> false
     end
-    in member None
+    in member None x tree
 
   let rec insert = function
     | x, (T (a, y, b) as s) ->

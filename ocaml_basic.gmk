@@ -84,6 +84,7 @@ all::
 
 clean::
 	$(RM) *.ml~ *.mli~
+	$(RM) *.annot
 	$(RM) *.cmi *.cmo *.cmx *.o
 
 ##
