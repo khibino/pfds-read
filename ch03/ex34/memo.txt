@@ -27,18 +27,20 @@ size (merge h_1 h_2) = size h_2 + size b_1 + size a_1 + 1
 
 size a >= size h_2 + size b_1
 
-  ln (size h_2 + size b_1) + 1 
-= ln ((size h_2 + size b_1) * 2)
-= ln (size h_2 + size b_1 + size h_2 + size b_1)
-<= ln (size h_2 + size b_1 + size a_1 + 1)
+  ln (size h_2 + size b_1 + 1) + 1 
+= ln ((size h_2 + size b_1 + 1) * 2)
+= ln (size h_2 + size b_1 + size h_2 + size b_1 + 2)
+                            ^^^^^^^^^^^^^^^^^^^
+<= ln ((size h_2 + size b_1 + size a_1 + 1) + 1)
+                              ^^^^^^^^
 なので成立
 
 size a < size h_2 + size b_1
 
-  ln (size a1) + 1
-= ln ((size a1 + size a1) * 2)
-= ln (size a1 + size a1)
-<= ln (size h_2 + size b_1 + size a_1 + 1)
+  ln (size a1 + 1) + 1
+= ln ((size a1 + 1) * 2)
+= ln (size a1 + size a1 + 2)
+<= ln ((size h_2 + size b_1 + size a_1 + 1) + 1)
 なので成立
 
         else makeT (y, a_2, merge (h_1, b_2))
