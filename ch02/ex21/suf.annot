@@ -1,0 +1,77 @@
+"suf.ml" 2 1 9 "suf.ml" 2 1 17
+type(
+  'a list -> 'a list list
+)
+ident(
+  def suffixes "suf.ml" 2 1 1 --
+)
+"suf.ml" 3 29 34 "suf.ml" 3 29 35
+type(
+  'a
+)
+"suf.ml" 3 29 37 "suf.ml" 3 29 39
+type(
+  'a list
+)
+ident(
+  def xs "suf.ml" 3 29 51 "suf.ml" 3 29 69
+)
+"suf.ml" 3 29 33 "suf.ml" 3 29 40
+type(
+  'a list
+)
+"suf.ml" 3 29 33 "suf.ml" 3 29 47
+type(
+  'a list
+)
+ident(
+  def xxs "suf.ml" 3 29 51 "suf.ml" 3 29 69
+)
+"suf.ml" 3 29 51 "suf.ml" 3 29 54
+type(
+  'a list
+)
+ident(
+  int_ref xxs "suf.ml" 3 29 33 "suf.ml" 3 29 47
+)
+"suf.ml" 3 29 58 "suf.ml" 3 29 66
+type(
+  'a list -> 'a list list
+)
+ident(
+  int_ref suffixes "suf.ml" 2 1 9 "suf.ml" 2 1 17
+)
+"suf.ml" 3 29 67 "suf.ml" 3 29 69
+type(
+  'a list
+)
+ident(
+  int_ref xs "suf.ml" 3 29 37 "suf.ml" 3 29 39
+)
+"suf.ml" 3 29 58 "suf.ml" 3 29 69
+call(
+  stack
+)
+type(
+  'a list list
+)
+"suf.ml" 3 29 51 "suf.ml" 3 29 69
+type(
+  'a list list
+)
+"suf.ml" 4 70 74 "suf.ml" 4 70 76
+type(
+  'a list
+)
+"suf.ml" 4 70 93 "suf.ml" 4 70 95
+type(
+  'a list
+)
+"suf.ml" 4 70 92 "suf.ml" 4 70 96
+type(
+  'a list list
+)
+"suf.ml" 2 1 20 "suf.ml" 4 70 96
+type(
+  'a list -> 'a list list
+)
