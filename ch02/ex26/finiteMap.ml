@@ -48,9 +48,9 @@ struct
   let bind (xk, xv, tree) =
     let rec bind = function
       | T (a, (yk, _ as y), b) ->
-        if Key.lt (xk, yk) then T (bind a, y, b)
+        if      Key.lt (xk, yk) then T (bind a, y, b)
         else if Key.lt (yk, xk) then T(a, y, bind b)
-        else T (a, (xk, xv), b)
+        else    T (a, (xk, xv), b)
       | E                      -> T (E, (xk, xv), E)
     in
     bind tree
